@@ -1,20 +1,19 @@
 from abc import ABC, abstractmethod
 
-
 class Staff(ABC):
     def __init__(self, name, salary):
-        self.name = name
+        self.name = name #encapsulation
         self.__salary = salary 
     
     def get_salary(self):
         return self.__salary
     
-    @abstractmethod
+    @abstractmethod # abstraction
     def role(self):
         pass
 
 class Teacher(Staff):
-    def role(self): 
+    def role(self): #polymorphism
         return f"{self.name} teaches students"
 
 class Admin(Staff):
@@ -23,18 +22,17 @@ class Admin(Staff):
 
 class Clerk(Staff):
     def role(self):  
-        return f"{self.name} helps in managing building"
+        return f"{self.name} cleans building"
 
-
-staff = [
+school_staff = [
     Teacher("abc", 5000),
     Admin("def", 4000),
     Clerk("ghi", 2000)
 ]
 
 print("Staff Roles and Salaries")
-
-for s in staff:
-    print(s.role())
+print("=" * 30)
+for s in school_staff:
+    print(s.role()) #inheritance
     print(f" Salary: Rs{s.get_salary()}")
     
