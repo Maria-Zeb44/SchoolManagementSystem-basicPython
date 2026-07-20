@@ -23,7 +23,7 @@ class Admin(Staff):
 
 class Clerk(Staff):
     def role(self):  
-        return f"{self.name} cleans building"
+        return f"{self.name} helps in managing building"
 
 
 staff = [
@@ -33,8 +33,8 @@ staff = [
 ]
 
 print("Staff Roles and Salaries")
-print("=" * 30)
+
 for s in staff:
     print(s.role())
     print(f" Salary: Rs{s.get_salary()}")
-    print("-" * 30)
+    
