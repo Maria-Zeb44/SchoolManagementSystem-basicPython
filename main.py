@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-
+#task 1
 class Staff(ABC):
     def __init__(self, name, salary):
         self.name = name #encapsulation
